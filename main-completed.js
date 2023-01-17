@@ -75,13 +75,6 @@ function getBiggestArray(firstArr, secondArr) {
   }
 }
 
-function apply(arr, callback) {
-  for (let i = 0; i < arr.length; i++) {
-    const element = arr[i];
-    arr[i] = callback(element);
-  }
-}
-
 // let sortedData = sortArray(data);
 calculateTotal(data);
 let sum = calculateTotal(data);
@@ -109,6 +102,13 @@ console.log(big);
 // function c(x) {
 //   return x * 5;
 // }
+
+function apply(arr, c) {
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    arr[i] = c(element);
+  }
+}
 
 apply(big, (x) => x * 5);
 console.log(big);
